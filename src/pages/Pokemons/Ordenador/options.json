@@ -1,0 +1,30 @@
+[
+    {
+      "nome": "",
+      "value": ""
+    },
+    {
+      "nome": "HP",
+      "value": "hp"
+    },
+    {
+      "nome": "Attack",
+      "value": "attack"
+    },
+    {
+      "nome": "Defense",
+      "value": "defense"
+    },
+    {
+      "nome": "Special Attack",
+      "value": "specialattack"
+    },
+    {
+      "nome": "Special Defence",
+      "value": "specialdefence"
+    },
+    {
+      "nome": "Speed",
+      "value": "speed"
+      }
+  ]

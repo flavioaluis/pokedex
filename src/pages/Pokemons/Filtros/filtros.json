@@ -1,0 +1,66 @@
+[
+    {
+      "label": "Normal",
+      "id": 1
+    },
+    {
+      "label": "Poison",
+      "id": 2
+    },
+    {
+      "label": "Fire",
+      "id": 3
+    },
+    {
+      "label": "Flying",
+      "id": 4
+    },
+    {
+      "label": "Water",
+      "id": 5
+    },
+    {
+      "label": "Bug",
+      "id": 6
+    },
+    {
+      "label": "Grass",
+      "id": 7
+    },
+    {
+      "label": "Electric",
+      "id": 8
+    },
+    {
+      "label": "Ground",
+      "id": 9
+    },
+    {
+      "label": "Fighting",
+      "id": 10
+    },
+    {
+      "label": "Fairy",
+      "id": 11
+    },
+    {
+      "label": "Psychic",
+      "id": 12
+    },
+    {
+      "label": "Rock",
+      "id": 13
+    },
+    {
+      "label": "Ice",
+      "id": 14
+    },
+    {
+      "label": "Ghost",
+      "id": 15
+    },
+    {
+     "label": "Dragon",
+      "id": 16
+    }
+  ]
