@@ -1,0 +1,100 @@
+@import "styles/variaveis";
+@import "styles/breakpoints";
+
+$grass: #9bcc50;
+$poison: #b97fc9;
+$fire: #fd7d24;
+$water: #025085;
+$flying: #3dc7ef;
+$ice: #51c4e7;
+$bug: #729f3f;
+$normal: #a4acaf;
+$electric: #eed535;
+$ground: #ab9842;
+$fairy: #fdb9e9;
+$fighting: #d52323;
+$dragon: #f16e57;
+$psychic: #f366b9;
+$rock: #a38c21;
+$ghost: #6232b1;
+
+
+.pokemon{
+  border: inset #856202;
+  border-radius: 0.8em;
+  &__image {
+    min-width: 100px;
+    @media (max-width: $desktop_xsm) {
+      width: 100%;
+    }
+    img {
+      border-radius: 8px;
+      width: 100%;
+    }
+  }
+  &__title {
+    h2 {
+        text-align: center;
+        margin:0;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+  }
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 700px;
+    @media (max-width: $desktop_xsm) {
+      justify-content: flex-end;
+    }
+    @media (max-width: $mobile) {
+      justify-content: flex-start;
+    }
+    > div {
+      margin: 4px;
+    }
+  }
+  &__type {
+    align-items: center;
+    border-radius: 2px;
+    display: flex;
+    font-weight: bold;
+    height: 20px;
+    justify-content: center;
+    padding: 10px 25px;
+    &__grass {
+      background-color: $grass;
+      color: white;
+    }
+    &__poison {
+      background-color: $poison;
+      color: white;
+    }
+    &__fire {
+      background-color: $fire;
+    }
+    &__water {
+      background-color: $water;
+    }
+  }
+  &__height {
+    padding:0.5rem;
+  }
+  &__weight {
+    padding-right:0.5em;
+  }
+  &__weight,
+  &__height,
+  &__category {
+    align-items: center;
+    display: flex;
+    font-size: 1.25rem;
+    font-weight: bold;
+    justify-content: center;
+  }
+  &__category {
+    color: $red;
+    font-size: 1.7rem;
+  }
+}
