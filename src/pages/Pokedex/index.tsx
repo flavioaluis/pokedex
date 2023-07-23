@@ -3,9 +3,14 @@ import styles from './Pokedex.module.scss';
 import { ReactComponent as Logo } from 'assets/logo.svg';
 import Buscador from './Buscador';
 import Filtros from './Filtros';
-import Ordenador from './Ordenador';
 import Pokemons from './Pokemons';
 
+
+interface Type {
+  type: {
+    name: string;
+  };
+}
 interface PokemonSprites {
   front_default: string;
   // Other sprite URLs if needed
@@ -14,14 +19,16 @@ interface PokemonSprites {
 interface PokemonData {
   id: number;
   name: string;
-  sprites: PokemonSprites
+  height: number;
+  weight:number;
+  sprites: PokemonSprites;
+  types: Type[];
 }
 
 export default function Pokedex() {
   const [pokemons, setPokemons] = useState<PokemonData[]>([]); // Specify the initial state type
   const [busca, setBusca] = useState("");
   const [filtro, setFiltro] = useState<number | null>(null);
-  const [ordenador, setOrdenador] = useState("");
 
   return (
     <main>
@@ -34,9 +41,8 @@ export default function Pokedex() {
         <Buscador busca={busca} setBusca={setBusca} />
         <div className={styles.pokedex__filters}>
           <Filtros filtro={filtro} setFiltro={setFiltro} />
-          <Ordenador ordenador={ordenador} setOrdenador={setOrdenador} />
         </div>
-        <Pokemons pokemons={pokemons} setPokemons={setPokemons} />
+        <Pokemons busca={busca} filtro={filtro} pokemons={pokemons} setPokemons={setPokemons} />
       </section>
     </main>
   );

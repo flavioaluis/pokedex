@@ -20,6 +20,7 @@ $ghost: #6232b1;
 
 
 .pokemon{
+  max-width: 200px;
   border: inset #856202;
   border-radius: 0.8em;
   &__image {
@@ -56,13 +57,13 @@ $ghost: #6232b1;
     }
   }
   &__type {
+    display:flex;
     align-items: center;
     border-radius: 2px;
-    display: flex;
+    width: 400px;
     font-weight: bold;
     height: 20px;
     justify-content: center;
-    padding: 10px 25px;
     &__grass {
       background-color: $grass;
       color: white;
@@ -73,10 +74,61 @@ $ghost: #6232b1;
     }
     &__fire {
       background-color: $fire;
+      color: white;
     }
     &__water {
       background-color: $water;
+      color: white;
     }
+    &__ice {
+      background-color: $ice;
+      color: white;
+    }
+    &__flying {
+      background-color: $flying;
+      color: white;
+    }
+    &__ground {
+      background-color: $ground;
+      color: white;
+    }
+    &__ghost {
+      background-color: $ghost;
+      color: white;
+    }
+    &__fighting {
+      background-color: $fighting;
+      color: white;
+    }
+    &__fairy {
+      background-color: $fairy;
+      color: white;
+    }
+    &__rock {
+      background-color: $rock;
+      color: white;
+    }
+    &__psychic {
+      background-color: $psychic;
+      color: white;
+    }
+    &__dragon{
+      background-color: $dragon;
+      color: white;
+    }
+    &__normal {
+      background-color: $normal;
+      color: white;
+    }
+    &__bug {
+      background-color: $bug;
+      color: white;
+    }
+    &__electric {
+      background-color: $electric;
+      color: white;
+    }
+
   }
   &__height {
     padding:0.5rem;
