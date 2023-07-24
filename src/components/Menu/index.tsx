@@ -1,51 +1,62 @@
 import styles from './Menu.module.scss';
+import { useNavigate } from 'react-router-dom';
 import SideNav, { 
   Toggle,
-  Nav,
   NavItem, 
   NavIcon, 
   NavText 
 } from '@trendmicro/react-sidenav';
-import { CgHome } from 'react-icons/cg';
+import { FaHome, FaUser } from 'react-icons/fa';
+import { ReactComponent as PokeLogo} from 'assets/pokeLogo.svg';
+import { ReactComponent as PokeDex} from 'assets/pokedex.svg';
 
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 
-import { ReactComponent as Logo} from 'assets/logo.svg';
 
 export default function Menu() {
+  const navigate = useNavigate();
+
+
   return (
-    <SideNav className={styles.menu}
-      onSelect={(selected) => {
+    <SideNav 
+      onSelect={(selected: string) => {
+        navigate('/'+ selected);
         // Add your code here
       }}
     >
       <SideNav.Toggle />
-      <SideNav.Nav defaultSelected="home">
-        <NavItem className={styles.menu__item} eventKey="home">
+      <SideNav.Nav defaultSelected="">
+        <NavItem className={styles.menu__item} eventKey="user">
           <NavIcon>
-            <CgHome size={25} style={{ margin: '10px' }} />
+            <FaUser className={styles.pokeIcons} />
           </NavIcon>
-          <NavText>
+          <NavText style={{fontSize:20}}>
+                User
+          </NavText>
+        </NavItem>
+        <NavItem className={styles.menu__item} eventKey="">
+          <NavIcon>
+            <FaHome className={styles.pokeIcons} />
+          </NavIcon>
+          <NavText style={{fontSize:20}}>
                 Home
           </NavText>
         </NavItem>
-        <NavItem eventKey="charts">
+        <NavItem className={styles.menu__item} eventKey="about">
           <NavIcon>
-            <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
+            <PokeLogo className={styles.pokeIcons}/>
           </NavIcon>
-          <NavText>
-                Charts
+          <NavText style={{fontSize:20}}>
+                About
           </NavText>
-          <NavItem eventKey="charts/linechart">
-            <NavText>
-                    Line Chart
-            </NavText>
-          </NavItem>
-          <NavItem eventKey="charts/barchart">
-            <NavText>
-                    Bar Chart
-            </NavText>
-          </NavItem>
+        </NavItem>
+        <NavItem className={styles.menu__item} eventKey="pokedex">
+          <NavIcon>
+            <PokeDex className={styles.pokeIcons}/>
+          </NavIcon>
+          <NavText style={{fontSize:20}}>
+                Pokedex
+          </NavText>
         </NavItem>
       </SideNav.Nav>
     </SideNav>

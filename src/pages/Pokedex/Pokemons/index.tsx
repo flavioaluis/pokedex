@@ -17,14 +17,14 @@ interface Props {
   pokemons: Array<{ id: number; name: string; sprites:PokemonSprites; height:number; weight:number; types:Type[] }>;
   setPokemons: React.Dispatch<React.SetStateAction<Array<{ id: number; name: string; sprites:PokemonSprites; height:number; weight:number; types: Type[] }>>>;
   busca: string;
-  filtro: number | null;
+
 }
 
 function capitalizeFirstLetter(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-export default function Pokemons({ pokemons, setPokemons, busca, filtro }: Props) {
+export default function Pokemons({ pokemons, setPokemons, busca }: Props) {
   const getPokemons = useCallback(() => {
     const idEnd = [];
     for (let i = 1; i < 150; i++) {
@@ -56,25 +56,6 @@ export default function Pokemons({ pokemons, setPokemons, busca, filtro }: Props
       setPokemons(searchedPokemons);
     }
   }, [busca, pokemons, setPokemons, getPokemons]);
-
-  ///////////////////////Error
-  const filterPokemons = useCallback(() => {
-    if (filtro === null) {
-      getPokemons();
-    } else {
-      const filtroString = String(filtro).toLowerCase();
-      const filteredPokemons = pokemons.filter((pokemon) =>
-        pokemon.types.some((type) => type.type.name.toLowerCase() === filtroString)
-      );
-      setPokemons(filteredPokemons);
-    }
-  }, [filtro, pokemons, setPokemons, getPokemons]);
-  
-
-  useEffect(() => {
-    filterPokemons();
-  }, [filterPokemons]);
-  //////////////////////Error
 
   useEffect(() => {
     searchPokemons();

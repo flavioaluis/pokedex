@@ -1,7 +1,7 @@
 import { useState } from 'react';
+import Theme from 'styles/Theme.module.scss';
 import styles from './Pokedex.module.scss';
 import Buscador from './Buscador';
-import Filtros from './Filtros';
 import Pokemons from './Pokemons';
 
 
@@ -27,19 +27,14 @@ interface PokemonData {
 export default function Pokedex() {
   const [pokemons, setPokemons] = useState<PokemonData[]>([]); // Specify the initial state type
   const [busca, setBusca] = useState('');
-  const [filtro, setFiltro] = useState<number | null>(null);
 
   return (
-    <main>
-      <header className={styles.header}></header>
-      <section className={styles.pokedex}>
-        <h3 className={styles.pokedex__title}> Procure o Pokemon</h3>
+    <section className={Theme.container}>
+      <h3 className={Theme.title}> Procure o Pokemon</h3>
+      <div className={styles.pokedex__search}>
         <Buscador busca={busca} setBusca={setBusca} />
-        <div className={styles.pokedex__filters}>
-          <Filtros filtro={filtro} setFiltro={setFiltro} />
-        </div>
-        <Pokemons busca={busca} filtro={filtro} pokemons={pokemons} setPokemons={setPokemons} />
-      </section>
-    </main>
+      </div>
+      <Pokemons busca={busca} pokemons={pokemons} setPokemons={setPokemons} />
+    </section>
   );
 }

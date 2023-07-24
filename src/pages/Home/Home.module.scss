@@ -1,10 +1,5 @@
 @import 'styles/variaveis';
-.title{
-  color: $dark;
-  font-size: 3rem;
-  margin-bottom: 30px;
-  padding-left: 2em;
-}
+
 .bestPokes {
   border-radius: 2px;
   display: flex;
@@ -13,6 +8,7 @@
   justify-content: space-between;
 }
 .bestPoke {
+  margin-bottom: 30px;;
   padding-left: 7em;
   &__image {
     width: 300px;

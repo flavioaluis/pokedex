@@ -1,0 +1,20 @@
+@import "styles/variaveis";
+@import "styles/breakpoints";
+
+.header {
+    background-image: url("/assets/pokedex/header.jpeg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    height:400px;
+    display:flex;
+    padding: 0 $padding-horizontal;
+    @media (max-width: $desktop_xsm) {
+        padding: 0px $padding-horizontal-mobile;
+      }
+      @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
+        padding: 0px $padding-horizontal-sm;
+      }
+      @media (min-width: $desktop_sm) and (max-width: $desktop_md) {
+        padding: 0px $padding-horizontal-md;
+      }
+}
