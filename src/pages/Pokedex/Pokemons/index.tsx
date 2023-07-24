@@ -39,9 +39,9 @@ export default function Pokemons({ pokemons, setPokemons, busca, filtro }: Props
       })
       .catch((error) => {
         if (error.response && error.response.status === 404) {
-          console.log("Pokemon not found");
+          console.log('Pokemon not found');
         } else {
-          console.log("Error fetching Pokemon data:", error);
+          console.log('Error fetching Pokemon data:', error);
         }
       });
   }, [setPokemons]);
@@ -89,13 +89,13 @@ export default function Pokemons({ pokemons, setPokemons, busca, filtro }: Props
     <div className={styles.pokemons}>
       {pokemons.map((pokemon, key) => (
         <Pokemon key={key} 
-                 id={pokemon.id}
-                 name={capitalizeFirstLetter(pokemon.name)}
-                 image={pokemon.sprites.front_default}
-                 height={pokemon.height}
-                 weight={pokemon.weight}
-                 types={pokemon.types}
-                 />
+          id={pokemon.id}
+          name={capitalizeFirstLetter(pokemon.name)}
+          image={pokemon.sprites.front_default}
+          height={pokemon.height}
+          weight={pokemon.weight}
+          types={pokemon.types}
+        />
                  
       ))}
       

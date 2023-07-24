@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import styles from './Pokedex.module.scss';
-import { ReactComponent as Logo } from 'assets/logo.svg';
 import Buscador from './Buscador';
 import Filtros from './Filtros';
 import Pokemons from './Pokemons';
@@ -27,14 +26,11 @@ interface PokemonData {
 
 export default function Pokedex() {
   const [pokemons, setPokemons] = useState<PokemonData[]>([]); // Specify the initial state type
-  const [busca, setBusca] = useState("");
+  const [busca, setBusca] = useState('');
   const [filtro, setFiltro] = useState<number | null>(null);
 
   return (
     <main>
-      <nav className={styles.menu}>
-        <Logo width={250} height={100} />
-      </nav>
       <header className={styles.header}></header>
       <section className={styles.pokedex}>
         <h3 className={styles.pokedex__title}> Procure o Pokemon</h3>

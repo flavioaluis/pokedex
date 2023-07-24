@@ -24,7 +24,7 @@ export default function Pokemon({ id,name, image, types, height, weight }: Props
   
   const pokeType = () => {
     if (types[1]) {
-      return capitalizeFirstLetter(types[0].type.name) + " | " + capitalizeFirstLetter(types[1].type.name);
+      return capitalizeFirstLetter(types[0].type.name) + ' | ' + capitalizeFirstLetter(types[1].type.name);
     }
     return capitalizeFirstLetter(types[0].type.name);
   };
