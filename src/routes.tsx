@@ -18,8 +18,9 @@ export default function AppRouter() {
             <Route index element={<Home />} />
             <Route path='about' element={<About />} />
             <Route path='pokedex' element={<Pokedex />} />
-            <Route path='pokemon/:id' element={<Pokemon />} />
+            
           </Route>
+          <Route path='pokemon/:id' element={<Pokemon />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer />

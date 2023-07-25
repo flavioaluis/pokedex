@@ -15,29 +15,56 @@
   flex-direction: column;
   gap: 20px;
 }
-.title{
-  font-size: 3rem;
-}
-.image {
-  width: 600px;
-  img {
-    border-radius: 8px;
-    width: 100%;
-  }
-}
-.content {
+
+.pokemonInfo {
+  display: flex;
   align-items: center;
+}
+
+.imageContainer {
+  flex: 1;
+  text-align: center;
+}
+
+.imageContainer img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.statsContainer {
+  flex: 2;
+  padding-left: 20px;
+}
+
+.stats {
   display: flex;
   flex-direction: column;
-  &__description {
-    color: $darkest-grey;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  &____details {
-    display: flex;
-    justify-content: space-between;
-  }
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.statBar {
+  flex: 1;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.statBarFill {
+  height: 100%;
+  background-color: #3f51b5;
+}
+
+.statName {
+  margin-left: 10px;
+  font-weight: bold; 
 }
 $grass: #9bcc50;
 $poison: #b97fc9;
@@ -55,29 +82,15 @@ $dragon: #f16e57;
 $psychic: #f366b9;
 $rock: #a38c21;
 $ghost: #6232b1;
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  max-width: 700px;
-  @media (max-width: $desktop_xsm) {
-    justify-content: flex-end;
-  }
-  @media (max-width: $mobile) {
-    justify-content: flex-start;
-  }
-div {
-    margin: 10px;
-  }
-  &__type {
-    align-items: center;
+
+.typesContainer {
+  display:flex;
+  justify-content: center;
+
+  &__color {
+    
     border-radius: 2px;
-    display: flex;
     font-weight: bold;
-    height: 40px;
-    justify-content: center;
-    padding: 10px 30px;
     &__grass {
       background-color: $grass;
       color: white;
@@ -142,6 +155,48 @@ div {
       background-color: $electric;
       color: white;
     }
+  }
+}
+  
+.tags {
+  display: flex;
+  margin-top: 20px;
+}
+
+.tagItem {
+  margin-right: 20px;
+  font-size: 14px;
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  &__description {
+    color: $darkest-grey;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  &____details {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  max-width: 700px;
+  @media (max-width: $desktop_xsm) {
+    justify-content: flex-end;
+  }
+  @media (max-width: $mobile) {
+    justify-content: flex-start;
+  }
+div {
+    margin: 10px;
   }
   &__weight,
   &__height,
