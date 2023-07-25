@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Theme from 'styles/Theme.module.scss';
@@ -26,14 +26,14 @@ interface PokemonData {
   types: string[];
 }
 
-type PokemonLinkProps = {
+interface PokemonLinkProps {
   to: {
     pathname: string;
     state: { pokemon: PokemonData };
   };
   className?: string;
   children: React.ReactNode;
-};
+}
 
 const PokemonLink: React.FC<PokemonLinkProps> = ({ to, className, children }:PokemonLinkProps) => {
   return <Link to={to} className={className}>{children}</Link>;
