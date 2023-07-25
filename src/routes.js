@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes , Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Menu from 'components/Menu';
 import StandardPage from 'components/StandardPage';
 import Footer from 'components/Footer';
@@ -8,25 +8,23 @@ import Pokedex from 'pages/Pokedex';
 import Pokemon from 'pages/Pokemon';
 import NotFound from 'pages/NotFound';
 
-
 export default function AppRouter() {
   return (
     <main className='container'>
       <Router>
         <Menu />
         <Routes>
-          <Route path='/' element={<StandardPage/>}>
-            <Route index element={<Home/>} />
+          <Route path='/' element={<StandardPage />}>
+            <Route index element={<Home />} />
             <Route path='about' element={<About />} />
-            <Route path='pokedex' element={<Pokedex/>} />
-          </Route>          
-          <Route path='pokemon/:id' element={<Pokemon />}/>
+            <Route path='pokedex' element={<Pokedex />} />
+          </Route>
+          <Route path='pokemon/:id' element={<Pokemon />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer />
       </Router>
     </main>
   );
-
 }
 

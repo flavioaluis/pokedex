@@ -1,7 +1,5 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import styles from './Pokemon.module.scss';
-import NotFound from 'pages/NotFound';
-import { useState,useEffect } from 'react';
 
 interface PokemonData {
   id: number;
@@ -15,18 +13,9 @@ interface PokemonData {
 }
 
 export default function Pokemon() {
-  const { id } = useParams<{ id: string }>();
+  const { state } = useLocation();
   const navigate = useNavigate();
-  const [pokemonsList, setPokemonsList] = useState<PokemonData[]>([]);
-
-  useEffect(() => {
-    setPokemonsList(pokemonsList);
-  }, []);
-
-  const pokemon = pokemonsList.find((pokemon) => pokemon.id === Number(id));
-  if(!pokemon) {
-    return <NotFound/>;
-  }
+  const { pokemon } = state as { pokemon: PokemonData };
 
   return (
     <>

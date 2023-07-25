@@ -1,4 +1,4 @@
-import { Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Theme from 'styles/Theme.module.scss';
@@ -91,22 +91,24 @@ export default function Pokedex() {
       <div className={styles.pokedex__pokemons}>
         {searchedPokemons.map((pokemon, key) => (
           <div key={key}>
-            <PokemonLink
-              to={{
-                pathname: `/pokemon/${pokemon.id}`,
-                state: { pokemon },
-              }}
-              className={styles.link}
-            >
-              <Pokemons
-                id={pokemon.id}
-                name={pokemon.name}
-                image={pokemon.front_default}
-                height={pokemon.height}
-                weight={pokemon.weight}
-                types={pokemon.types}
-              />
-            </PokemonLink>
+            {pokemon && (
+              <PokemonLink
+                to={{
+                  pathname: `/pokemon/${pokemon.id}`,
+                  state: { pokemon },
+                }}
+                className={styles.link}
+              >
+                <Pokemons
+                  id={pokemon.id}
+                  name={pokemon.name}
+                  image={pokemon.front_default}
+                  height={pokemon.height}
+                  weight={pokemon.weight}
+                  types={pokemon.types}
+                />
+              </PokemonLink>
+            )}
 
           </div>
         ))}
