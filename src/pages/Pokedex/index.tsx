@@ -1,8 +1,9 @@
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Theme from 'styles/Theme.module.scss';
 import styles from './Pokedex.module.scss';
-import Pokemon from './Pokemon';
+import Pokemons from './Pokemons';
 import Buscador from './Buscador';
 
 interface Type {
@@ -10,17 +11,33 @@ interface Type {
     name: string;
   };
 }
+
+interface Stat {
+  base_stat: number;
+}
+
 interface PokemonData {
   id: number;
   name: string;
-  front_default:string;
-  height:number;
-  weight:number;
-  types:string[];
-
-  // Adicionar outras propriedades
+  front_default: string;
+  stats: number[];
+  height: number;
+  weight: number;
+  types: string[];
 }
 
+type PokemonLinkProps = {
+  to: {
+    pathname: string;
+    state: { pokemon: PokemonData };
+  };
+  className?: string;
+  children: React.ReactNode;
+};
+
+const PokemonLink: React.FC<PokemonLinkProps> = ({ to, className, children }:PokemonLinkProps) => {
+  return <Link to={to} className={className}>{children}</Link>;
+};
 
 export default function Pokedex() {
   const [pokemons, setPokemons] = useState<PokemonData[]>([]);
@@ -31,7 +48,7 @@ export default function Pokedex() {
 
   const getPokemons = () => {
     const iEnds = [];
-    for (let i = 1; i < 120; i++) {
+    for (let i = 1; i < 19; i++) {
       iEnds.push(`https://pokeapi.co/api/v2/pokemon/${i}/`);
     }
     console.log(iEnds);
@@ -42,6 +59,7 @@ export default function Pokedex() {
           id: result.data.id,
           name: result.data.name,
           front_default: result.data.sprites.front_default,
+          stats: result.data.stats.map((base_stat: Stat) => base_stat.base_stat),
           height: result.data.height,
           weight: result.data.weight,
           types: result.data.types.map((type: Type) => type.type.name),
@@ -73,14 +91,23 @@ export default function Pokedex() {
       <div className={styles.pokedex__pokemons}>
         {searchedPokemons.map((pokemon, key) => (
           <div key={key}>
-            <Pokemon
-              id={pokemon.id}
-              name={pokemon.name}
-              image={pokemon.front_default}
-              height={pokemon.height}
-              weight={pokemon.weight}
-              types={pokemon.types}
-            />
+            <PokemonLink
+              to={{
+                pathname: `/pokemon/${pokemon.id}`,
+                state: { pokemon },
+              }}
+              className={styles.link}
+            >
+              <Pokemons
+                id={pokemon.id}
+                name={pokemon.name}
+                image={pokemon.front_default}
+                height={pokemon.height}
+                weight={pokemon.weight}
+                types={pokemon.types}
+              />
+            </PokemonLink>
+
           </div>
         ))}
       </div>

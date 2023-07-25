@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import styles from './Pokemon.module.scss';
+import styles from './Pokemons.module.scss';
 
 // Defina os tipos no props
 interface PokemonData {
@@ -11,7 +11,7 @@ interface PokemonData {
   types: string[];
 }
 
-export default function Pokemon({ id, name, image, height, weight, types }: PokemonData) {
+export default function Pokemons({ id, name, image, height, weight, types }: PokemonData) {
   const capitalizeFirstLetter = (str:string) => {
     return (str.charAt(0).toUpperCase() + str.slice(1));
   };
@@ -37,7 +37,7 @@ export default function Pokemon({ id, name, image, height, weight, types }: Poke
           </div>
           <div className={styles.pokemon__weight}>{height/10} M</div>
           <div className={styles.pokemon__height}>{weight/10} Kg</div>
-          <div className={styles.pokemon__category}>#{id}</div>
+          <div className={styles.pokemon__id}>#{id}</div>
         </div>
       </div>  
     </div>
