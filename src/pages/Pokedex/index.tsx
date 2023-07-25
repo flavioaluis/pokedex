@@ -31,7 +31,7 @@ export default function Pokedex() {
 
   const getPokemons = () => {
     const iEnds = [];
-    for (let i = 1; i < 20; i++) {
+    for (let i = 1; i < 120; i++) {
       iEnds.push(`https://pokeapi.co/api/v2/pokemon/${i}/`);
     }
     console.log(iEnds);
@@ -70,18 +70,20 @@ export default function Pokedex() {
       <div className={styles.pokedex__search}>
         <Buscador pokemonSearch={pokemonSearch} />
       </div>
-      {searchedPokemons.map((pokemon, key) => (
-        <div className={styles.pokedex__pokemons} key={key}>
-          <Pokemon
-            id={pokemon.id}
-            name={pokemon.name}
-            image={pokemon.front_default}
-            height={pokemon.height}
-            weight={pokemon.weight}
-            types={pokemon.types}
-          />
-        </div>
-      ))}
+      <div className={styles.pokedex__pokemons}>
+        {searchedPokemons.map((pokemon, key) => (
+          <div key={key}>
+            <Pokemon
+              id={pokemon.id}
+              name={pokemon.name}
+              image={pokemon.front_default}
+              height={pokemon.height}
+              weight={pokemon.weight}
+              types={pokemon.types}
+            />
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

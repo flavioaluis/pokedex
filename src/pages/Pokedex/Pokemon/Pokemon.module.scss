@@ -20,9 +20,11 @@ $ghost: #6232b1;
 
 
 .pokemon{
+  align-items: center;
   max-width: 200px;
   border: inset #856202;
   border-radius: 0.8em;
+  justify-content: center;
   &__image {
     min-width: 100px;
     @media (max-width: $desktop_xsm) {
@@ -43,8 +45,9 @@ $ghost: #6232b1;
   }
   &__tags {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     max-width: 700px;
     @media (max-width: $desktop_xsm) {
       justify-content: flex-end;
@@ -57,13 +60,14 @@ $ghost: #6232b1;
     }
   }
   &__type {
+    justify-content: center;
     display:flex;
     align-items: center;
     border-radius: 2px;
-    width: 400px;
+    width: 150px;
     font-weight: bold;
     height: 20px;
-    justify-content: center;
+    
     &__grass {
       background-color: $grass;
       color: white;
@@ -130,20 +134,15 @@ $ghost: #6232b1;
     }
 
   }
-  &__height {
-    padding:0.5rem;
-  }
-  &__weight {
-    padding-right:0.5em;
-  }
   &__weight,
   &__height,
   &__category {
-    align-items: center;
+    
+    margin-left: 10px;
     display: flex;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: bold;
-    justify-content: center;
+    
   }
   &__category {
     color: $red;
