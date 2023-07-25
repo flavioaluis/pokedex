@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import styles from './Buscador.module.scss';
 import { CgSearch } from 'react-icons/cg';
 
-interface Props {
-    busca:string;
-    setBusca:React.Dispatch<React.SetStateAction<string>>
+interface BuscadorProps {
+  
+  pokemonSearch: (name: string) => void;
 }
-export default function Buscador({busca, setBusca}:Props) {
+
+export default function Buscador({pokemonSearch}: BuscadorProps) {
+  const [searchValue, setSearchValue] = useState('');
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(event.target.value);
+    pokemonSearch(event.target.value); // Call the pokemonSearch function to update the parent state
+  };
+
   return<div className={styles.buscador}>
     <input 
-      value={busca}
-      onChange={(evento) => setBusca(evento.target.value)}
-      placeholder="Buscar"
+      type="text"
+      placeholder="Search Pokemon"
+      value={searchValue}
+      onChange={handleChange}
     />
     <CgSearch 
       size={20}

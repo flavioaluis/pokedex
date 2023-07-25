@@ -1,11 +1,19 @@
 @import "styles/variaveis";
 @import "styles/breakpoints";
 
+
+
 .pokedex {
 
   &__search {  
     margin-bottom: 30px;
     
   }
-  
+  &__pokemons{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+    grid-gap: 1rem;
+    
+  }
 }
