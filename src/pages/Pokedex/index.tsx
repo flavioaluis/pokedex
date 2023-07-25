@@ -91,24 +91,22 @@ export default function Pokedex() {
       <div className={styles.pokedex__pokemons}>
         {searchedPokemons.map((pokemon, key) => (
           <div key={key}>
-            {pokemon && (
-              <PokemonLink
-                to={{
-                  pathname: `/pokemon/${pokemon.id}`,
-                  state: { pokemon },
-                }}
-                className={styles.link}
-              >
-                <Pokemons
-                  id={pokemon.id}
-                  name={pokemon.name}
-                  image={pokemon.front_default}
-                  height={pokemon.height}
-                  weight={pokemon.weight}
-                  types={pokemon.types}
-                />
-              </PokemonLink>
-            )}
+            <PokemonLink
+              to={{
+                pathname: `/pokemon/${pokemon.id}`,
+                state: { pokemon },
+              }}
+              className={styles.link}
+            >
+              <Pokemons
+                id={pokemon.id}
+                name={pokemon.name}
+                image={pokemon.front_default}
+                height={pokemon.height}
+                weight={pokemon.weight}
+                types={pokemon.types}
+              />
+            </PokemonLink>
 
           </div>
         ))}
