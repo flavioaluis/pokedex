@@ -25,8 +25,8 @@ export default function Menu() {
       }}
     >
       <SideNav.Toggle />
-      <SideNav.Nav defaultSelected="">
-        <NavItem className={styles.menu__item} eventKey="user">
+      <SideNav.Nav className={styles.menu} defaultSelected="profile">
+        <NavItem className={styles.menu__item} eventKey="profile">
           <NavIcon>
             <FaUser className={styles.pokeIcons} />
           </NavIcon>

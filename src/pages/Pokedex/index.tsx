@@ -27,7 +27,7 @@ interface PokemonLinkProps {
 }
 
 const PokemonLink: React.FC<PokemonLinkProps> = ({ to, className, children }:PokemonLinkProps) => {
-  return <Link to={to} className={className}>{children}</Link>;
+  return <Link to={to} state={to.state} className={className}>{children}</Link>;
 };
 
 export default function Pokedex() {
