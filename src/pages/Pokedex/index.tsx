@@ -2,6 +2,7 @@ import {Link} from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { PokemonData } from 'Types/pokeData';
 import Theme from 'styles/Theme.module.scss';
 import styles from './Pokedex.module.scss';
 import Pokemons from './Pokemons';
@@ -16,17 +17,6 @@ interface Type {
 interface Stat {
   base_stat: number;
 }
-
-interface PokemonData {
-  id: number;
-  name: string;
-  front_default: string;
-  stats: number[];
-  height: number;
-  weight: number;
-  types: string[];
-}
-
 interface PokemonLinkProps {
   to: {
     pathname: string;

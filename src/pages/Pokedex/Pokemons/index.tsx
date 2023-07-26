@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import styles from './Pokemons.module.scss';
 
-// Defina os tipos no props
 interface PokemonData {
   id: number
   name: string;

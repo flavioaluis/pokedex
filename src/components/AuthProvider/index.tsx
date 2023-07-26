@@ -1,45 +1,23 @@
-import { useState } from 'react';
+import { IAuthProvider, IContext, IUser } from 'Types/validation';
+import React, { createContext, useState } from 'react';
 
-const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+export const AuthContext = createContext<IContext>({} as IContext);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Aqui você pode adicionar a lógica para validar o e-mail e senha.
-    // Por exemplo, você pode enviar uma solicitação para um servidor para verificar as credenciais.
-    console.log('E-mail:', email);
-    console.log('Senha:', password);
-  };
+export const AuthProvider = ({ children}: IAuthProvider) => {
+  const [user, setUser] = useState<IUser | null>();
 
-  return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="email">E-mail:</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Senha:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Entrar</button>
-      </form>
-    </div>
+  async function authenticate (email:string, password:string) {
+
+  }
+
+  function logout() {
+
+  }
+
+  return(
+    <AuthContext.Provider value={{...user, authenticate, logout}}>
+      {children}
+    </AuthContext.Provider>
   );
-};
 
-export default Login;
+};
