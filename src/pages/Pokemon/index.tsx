@@ -1,6 +1,7 @@
 import { useLocation, useNavigate, Routes, Route } from 'react-router-dom';
 import styles from './Pokemon.module.scss';
 import StandardPage from 'components/StandardPage';
+import NotFound from 'pages/NotFound';
 
 
 interface PokemonData {
@@ -18,6 +19,12 @@ export default function Pokemon() {
   const { state } = useLocation();
   const navigate = useNavigate();
   const { pokemon } = state as { pokemon: PokemonData };
+
+  console.log('Pokemon data:', pokemon);
+
+  if (!pokemon) {
+    return <NotFound />;
+  }
 
   return (
     <Routes>

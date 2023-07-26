@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom';
+import ReactPaginate from 'react-paginate';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Theme from 'styles/Theme.module.scss';
@@ -42,16 +43,17 @@ const PokemonLink: React.FC<PokemonLinkProps> = ({ to, className, children }:Pok
 export default function Pokedex() {
   const [pokemons, setPokemons] = useState<PokemonData[]>([]);
   const [searchedPokemons, setSearchedPokemons] = useState<PokemonData[]>([]);
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsPerPage = 12; 
   useEffect(() => {
     getPokemons();
   }, []);
 
   const getPokemons = () => {
     const iEnds = [];
-    for (let i = 1; i < 19; i++) {
+    for (let i = 1; i < 152; i++) {
       iEnds.push(`https://pokeapi.co/api/v2/pokemon/${i}/`);
     }
-    console.log(iEnds);
     axios
       .all(iEnds.map((iEnd) => axios.get(iEnd)))
       .then((results) => {
@@ -82,6 +84,15 @@ export default function Pokedex() {
     }
   };
 
+  const displayPokemons = searchedPokemons.slice(
+    currentPage * itemsPerPage,
+    (currentPage + 1) * itemsPerPage
+  );
+
+  // Função para trocar de página
+  const handlePageChange = (selectedPage: number) => {
+    setCurrentPage(selectedPage);
+  };
   return (
     <section>
       <h3 className={Theme.title}> Procure o Pokemon</h3>
@@ -89,7 +100,7 @@ export default function Pokedex() {
         <Buscador pokemonSearch={pokemonSearch} />
       </div>
       <div className={styles.pokedex__pokemons}>
-        {searchedPokemons.map((pokemon, key) => (
+        {displayPokemons.map((pokemon, key) => (
           <div key={key}>
             <PokemonLink
               to={{
@@ -110,6 +121,22 @@ export default function Pokedex() {
 
           </div>
         ))}
+      </div>
+      <div className={styles.pagination}>
+        <ReactPaginate
+          previousLabel={'<'}
+          nextLabel={'>'}
+          breakLabel={'...'}
+          pageCount={Math.ceil(searchedPokemons.length / itemsPerPage)}
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={5}
+          onPageChange={(selected) => handlePageChange(selected.selected)}
+          containerClassName={styles.paginationContainer}
+          pageClassName={styles.paginationItem}
+          previousClassName={styles.paginationItem}
+          nextClassName={styles.paginationItem}
+          activeClassName={styles.paginationActive}
+        />
       </div>
     </section>
   );
