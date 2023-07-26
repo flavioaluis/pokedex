@@ -7,8 +7,8 @@ import SideNav, {
   NavText 
 } from '@trendmicro/react-sidenav';
 import { FaHome, FaUser } from 'react-icons/fa';
-import { ReactComponent as PokeLogo} from 'assets/pokeLogo.svg';
-import { ReactComponent as PokeDex} from 'assets/pokedex.svg';
+import { ReactComponent as PokeLogo} from 'assets/svgs/pokeLogo.svg';
+import { ReactComponent as PokeDex} from 'assets/svgs/pokedex.svg';
 
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 

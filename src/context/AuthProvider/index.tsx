@@ -1,5 +1,5 @@
 import { LoginRequest, getUserLocalStorage, setUserLocalStorage } from 'Types/util';
-import { IAuthProvider, IContext, IUser } from 'Types/validation';
+import { IAuthProvider, IContext, IUser } from 'Types/authTypes';
 import { createContext, useEffect, useState } from 'react';
 
 export const AuthContext = createContext<IContext>({} as IContext);

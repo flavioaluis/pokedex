@@ -1,3 +1,20 @@
-.userLogin {
-  
+@import "../../styles/variaveis";
+
+.container {
+  background-image: url("/assets/pokemons.png");
+  background-size:cover;
+  background-position: 50% center;
+  background-repeat: no-repeat;
+}
+
+.ant-form-item {
+  font-size: 18px;
+}
+.formButton {
+  display:flex;
+  justify-content: center;
+}
+
+.botao {
+  background-color: $red;
 }

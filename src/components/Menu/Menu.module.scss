@@ -2,7 +2,7 @@
 @import "styles/breakpoints";
 
 .menu {
-  position:fixed;
+  
     @media (max-width: $desktop_xsm) {
       padding: 20px $padding-horizontal-mobile;
     }

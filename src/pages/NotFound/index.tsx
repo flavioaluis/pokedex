@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import classNames from 'classnames';
 import Theme from 'styles/Theme.module.scss';
 import styles from './NotFound.module.scss';
-import Image404 from 'assets/not-found.png';
+import Image404 from 'assets//notfound/sLogo.png';
 
 export default function NotFound() {
   const navigate = useNavigate ();

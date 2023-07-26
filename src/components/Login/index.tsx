@@ -1,7 +1,7 @@
 import { useAuth } from 'context/AuthProvider/useAuth';
+import { useNavigate } from 'react-router-dom';
 import { Button, Col, Form, Input, Row, message } from 'antd';
 import styles from './Login.module.scss';
-import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const auth = useAuth();
@@ -13,14 +13,13 @@ const Login = () => {
 
       navigate('/profile');
     } catch (error) {
-      alert('Invalid email or password');
+      message.error('Invalid email or password');
     }
   }
 
   return (
-    <Row
+    <Row className={styles.container}
       justify='center'
-      align='middle'
       style={{
         height: '100vh',
       }}
@@ -28,17 +27,34 @@ const Login = () => {
       <Col span={12}>
         <Form
           name='basic'
-          labelCol={{ span: 8 }}
-          wrapperCol={{ span: 16 }}
-          onFinish={() => {}}
+          labelCol={{ span: 5  }}
+          wrapperCol={{ span: 14}}
+          onFinish={onFinish}
         >
-          <Form.Item label='Email' name='email'>
+          <Form.Item 
+            label='Email' 
+            name='email'
+          >
             <Input />
           </Form.Item>
 
-          <Form.Item label='Password' name='password'>
-            <Input />
+          <Form.Item className={styles.formItem}
+            label='Password' 
+            name='password'
+          >
+            <Input.Password />
           </Form.Item>
+
+          <Form.Item  className={styles.formButton} wrapperCol={{ offset:8, span:16}}>
+            <Button 
+              type='primary' 
+              htmlType='submit'
+              className={styles.botao}
+            >
+              Sign In
+            </Button>
+          </Form.Item>
+
         </Form>
       </Col>
     </Row>
