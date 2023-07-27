@@ -1,4 +1,4 @@
-import { useAuth } from 'context/AuthProvider/useAuth';
+import { useAuth } from 'context/useAuth';
 import { useNavigate } from 'react-router-dom';
 import { Button, Col, Form, Input, Row, message } from 'antd';
 import styles from './Login.module.scss';

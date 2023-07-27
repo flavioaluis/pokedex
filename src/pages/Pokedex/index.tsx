@@ -2,29 +2,11 @@ import { Link } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { PokemonData } from 'Types/pokeData';
+import { PokemonData, Stat, Type, PokemonLinkProps } from 'Types/pokeData';
 import Theme from 'styles/Theme.module.scss';
 import styles from './Pokedex.module.scss';
 import Pokemons from './Pokemons';
 import Buscador from './Buscador';
-
-interface Type {
-  type: {
-    name: string;
-  };
-}
-
-interface Stat {
-  base_stat: number;
-}
-interface PokemonLinkProps {
-  to: {
-    pathname: string;
-    state: { pokemon: PokemonData };
-  };
-  className?: string;
-  children: React.ReactNode;
-}
 
 const PokemonLink: React.FC<PokemonLinkProps> = ({
   to,
@@ -59,7 +41,7 @@ export default function Pokedex() {
         const pokemonData = results.map((result) => ({
           id: result.data.id,
           name: result.data.name,
-          front_default: result.data.sprites.front_default,
+          image: result.data.sprites.front_default,
           stats: result.data.stats.map(
             (base_stat: Stat) => base_stat.base_stat
           ),
@@ -90,7 +72,7 @@ export default function Pokedex() {
     (currentPage + 1) * itemsPerPage
   );
 
-  // Função para trocar de página
+  // Troca de página
   const handlePageChange = (selectedPage: number) => {
     setCurrentPage(selectedPage);
   };
@@ -115,7 +97,7 @@ export default function Pokedex() {
               <Pokemons
                 id={pokemon.id}
                 name={pokemon.name}
-                image={pokemon.front_default}
+                image={pokemon.image}
                 height={pokemon.height}
                 weight={pokemon.weight}
                 types={pokemon.types}

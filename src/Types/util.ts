@@ -1,6 +1,8 @@
 import { Api } from 'services/api';
 import { IUser } from './authTypes';
 
+// Storage API
+
 export function setUserLocalStorage(user: IUser | null) {
   localStorage.setItem('u', JSON.stringify(user));
 }
@@ -25,4 +27,9 @@ export async function LoginRequest (email:string, password:string) {
   } catch (error) {
     return null;
   }
+}
+
+// Função para deixar a primeira letra maiúscula
+export default function capitalizeFirstLetter(str:string) {
+  return (str.charAt(0).toUpperCase() + str.slice(1));
 }

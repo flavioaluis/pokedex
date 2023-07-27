@@ -1,29 +1,15 @@
 import { useLocation, useNavigate, Routes, Route } from 'react-router-dom';
 import classNames from 'classnames';
+import { PokemonData } from 'Types/pokeData';
+import Capitalizar from 'Types/util';
 import styles from './Pokemon.module.scss';
 import StandardPage from 'components/StandardPage';
 import NotFound from 'pages/NotFound';
-
-
-
-interface PokemonData {
-  id: number;
-  name: string;
-  front_default: string;
-  stats:number[];
-  height: number;
-  weight: number;
-  types: string[];
-  
-}
 
 export default function Pokemon() {
   const { state } = useLocation();
   const navigate = useNavigate();
   const { pokemon } = state as { pokemon: PokemonData };
-  const capitalizeFirstLetter = (str:string) => {
-    return (str.charAt(0).toUpperCase() + str.slice(1));
-  };
   console.log(state);
   const pokeType = () => {
     const types = pokemon.types.map((type) => type.toLowerCase());
@@ -31,17 +17,17 @@ export default function Pokemon() {
     if (types.length === 1) {
       return (
         <div className={classNames(styles[`typesContainer__type__${types[0]}`])}>
-          {capitalizeFirstLetter(types[0])}
+          {Capitalizar(types[0])}
         </div>
       );
     } else if (types.length === 2) {
       return (
         <>
           <div className={classNames(styles[`typesContainer__type__${types[0]}`])}>
-            {capitalizeFirstLetter(types[0])}
+            {Capitalizar(types[0])}
           </div>
           <div className={classNames(styles[`typesContainer__type__${types[1]}`])}>
-            {capitalizeFirstLetter(types[1])}
+            {Capitalizar(types[1])}
           </div>
         </>
       );
@@ -66,9 +52,9 @@ export default function Pokemon() {
               {'< Voltar '}
             </button>
             <section>
-              <h1 className={styles.title}>{capitalizeFirstLetter(pokemon.name)}</h1>
+              <h1 className={styles.title}>{Capitalizar(pokemon.name)}</h1>
               <div className={styles.pokemonInfo}>
-                <div className={styles.imageContainer}><img src={pokemon.front_default} alt={pokemon.name} /></div>
+                <div className={styles.imageContainer}><img src={pokemon.image} alt={pokemon.name} /></div>
                 <div className={styles.statsContainer}>
                   <div className={styles.stats}>
                     <div className={styles.stat}> HP:

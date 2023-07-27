@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { AuthProvider } from 'context/AuthProvider';
+import { AuthProvider } from 'context';
 import { ProtectedLayout } from 'components/ProtectedLayout';
 import Login from 'components/Login';
 import Menu from 'components/Menu';
@@ -11,10 +11,6 @@ import About from 'pages/About';
 import Pokedex from 'pages/Pokedex';
 import Pokemon from 'pages/Pokemon';
 import NotFound from 'pages/NotFound';
-
-
-
-
 
 export default function AppRouter() {
   return (

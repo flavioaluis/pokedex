@@ -30,7 +30,7 @@ export default function Home() {
         {pokemonsRecomendados.map(pokemon => (
           <div key={pokemon.id} className={styles.recomendado}>
             <div className={styles.bestPoke__image}>
-              <img src={pokemon.front_default} alt={pokemon.name} />
+              <img src={pokemon.image} alt={pokemon.name} />
             </div>
             <button 
               className={styles.bestPoke__button}

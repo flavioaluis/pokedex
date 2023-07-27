@@ -1,10 +1,6 @@
 import styles from './Menu.module.scss';
 import { useNavigate } from 'react-router-dom';
-import SideNav, { 
-  NavItem, 
-  NavIcon, 
-  NavText 
-} from '@trendmicro/react-sidenav';
+import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import { FaHome, FaUser } from 'react-icons/fa';
 import { ReactComponent as PokeLogo} from 'assets/svgs/pokeLogo.svg';
 import { ReactComponent as PokeDex} from 'assets/svgs/pokedex.svg';
