@@ -2,8 +2,6 @@
 @import "styles/breakpoints";
 
 .menu {
-  position:fixed;
-  top:50px;
   &__item{
     display: flex;
     align-items: center;
@@ -13,7 +11,6 @@
       cursor: pointer;
       font-size: 40px;
       font-weight: 600;
-      text-decoration: none;
       transition: .2s ease;
       &:hover {
         color: $dark-grey;
@@ -26,7 +23,4 @@
     margin: 10px;
     width:25px;
     height:25px;
-  }
-  .text{
-    font-size: 40px;
   }

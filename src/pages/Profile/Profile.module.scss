@@ -4,9 +4,19 @@
 .container {
   display:flex;
   justify-content: center;
+  @media (max-width: $desktop_xsm) {
+    flex-direction: column;
+    align-items: center;
+    }
 }
 .perfil {
   width:20%;
+  @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
+    width:35%;
+  }
+  @media (max-width: $desktop_xsm) {
+    width:35%;
+    }
 }
 
 .title {
@@ -18,4 +28,9 @@
 .image {
   display: flex;
   justify-content: center;
+  img{
+  @media (max-width: $desktop_xsm) {
+    width:70%;
+    }
+  }
 }

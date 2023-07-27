@@ -1,7 +1,7 @@
 @import "styles/variaveis";
 @import "styles/breakpoints";
+
 .footer {
-  text-decoration: none;
   background-color: $red;
   display: flex;
   justify-content: center;
@@ -18,13 +18,19 @@
 .footerContent {
   display: flex;
   align-items: center;
+  @media (max-width: $desktop_xsm) {
+    flex-direction: column;
+  }
 }
 
 .logoContainer {
-  flex: 0 0 200px; 
   margin-right: 20px; 
+}
 
+.Logo{
+  width: 200px;
+  height: 100px;
+}
 .textContainer {
   flex: 1;
-}
 }

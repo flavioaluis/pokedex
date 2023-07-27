@@ -1,7 +1,6 @@
 import styles from './Menu.module.scss';
 import { useNavigate } from 'react-router-dom';
 import SideNav, { 
-  Toggle,
   NavItem, 
   NavIcon, 
   NavText 

@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
         <div className={styles.logoContainer}>
-          <Logo width={200} height={200} />
+          <Logo className={styles.Logo} />
         </div>
         <div className={styles.textContainer}>
           <h4>

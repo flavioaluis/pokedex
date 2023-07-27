@@ -16,14 +16,14 @@ export default function Profile() {
       <div className={styles.container}>
         <img className={styles.perfil} src={trainne} alt={'Perfil'} />
         <Row
+          justify = 'center'
           style={{
-            width:'60vh',
-            height: '30vh',
+            width:'60vh',       
           }}
         >
-          <Col span={14}>
+          <Col span={14} xs={ 8 } sm={ 14 } md={ 14 } >
             <h3 className={styles.title}>Trainer</h3>
-            <Form name='basic' labelCol={{ span: 11 }} wrapperCol={{ span: 25 }}>
+            <Form name='basic' labelCol={{ span: 11 }} wrapperCol={{ span: 10 }}>
               <Form.Item label='Name' name='name'>
                 <Input />
               </Form.Item>
