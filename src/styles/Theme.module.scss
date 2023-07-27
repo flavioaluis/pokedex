@@ -4,6 +4,16 @@
 .container {
   padding: 50px $padding-horizontal;
   @media (max-width: $desktop_xsm) {
+    .title{
+      text-align: center;
+    }
+    .subTitle{
+      text-align: center;
+    }
+    .description{
+      text-align: center;
+    }
+  
     padding: 50px $padding-horizontal-mobile;
   }
   @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {

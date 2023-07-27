@@ -1,6 +1,7 @@
 import styles from './Home.module.scss';
 import Theme from 'styles/Theme.module.scss';
 import Kanto from 'assets/Kanto.webp';
+import Cidades from 'assets/Citys.jpg';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { PokemonData } from 'Types/pokeData';
 
@@ -25,14 +26,14 @@ export default function Home() {
       <h3 className={Theme.title}>
         Pokemons mais procurados
       </h3>
-      <div className={styles.recomendados}>
+      <div className={styles.bestPoke}>
         {pokemonsRecomendados.map(pokemon => (
           <div key={pokemon.id} className={styles.recomendado}>
-            <div className={styles.recomendado__imagem}>
+            <div className={styles.bestPoke__image}>
               <img src={pokemon.front_default} alt={pokemon.name} />
             </div>
             <button 
-              className={styles.recomendado__botao}
+              className={styles.bestPoke__button}
               onClick={() => redirecionarDetalhes(pokemon)}
             >
                   Ver mais
@@ -56,12 +57,9 @@ export default function Home() {
       </div>
       
       <h3 className={Theme.title}> Região Kanto </h3>
-      <div className={styles.kanto}>
-        <img src={Kanto} alt="Mundo Pokemon" />
-        <div className={styles.mapKanto}>
-
-        </div>
-        
+      <div className={styles.map}>
+        <img  className={styles.map__Kanto} src={Kanto} alt="Mundo Pokemon" />
+        <img  className={styles.map__Kanto} src={Cidades} alt="Mundo Pokemon" />
       </div>
     </section>
   );

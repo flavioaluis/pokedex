@@ -1,3 +1,4 @@
+@import 'styles/_breakpoints.scss';
 @import 'styles/variaveis';
 
 .bestPokes {
@@ -34,3 +35,23 @@
     }
   }
 }
+.map{
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: $mobile) {
+    flex-direction:column;
+    
+  }
+  
+
+  &__Kanto{
+  width: 45%;
+  @media (max-width: $mobile) {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  }
+}
+
+
+

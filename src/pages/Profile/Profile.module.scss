@@ -1,0 +1,21 @@
+@import "styles/variaveis";
+@import "styles/breakpoints";
+
+.container {
+  display:flex;
+  justify-content: center;
+}
+.perfil {
+  width:20%;
+}
+
+.title {
+  text-align: center;
+  color: $dark;
+  font-size: 3rem;
+  
+}
+.image {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "value": "pallet",
+    "label": "Pallet Town"
+  },
+  {
+    "value": "viridian",
+    "label": "Viridian City"
+  },
+  {
+    "value": "pewter",
+    "label": "Pewter City"
+  },
+  {
+    "value": "cerulean",
+    "label": "Cerulean City"
+  },
+  {
+    "value": "vermilion",
+    "label": "Vermilion City"
+  },
+  {
+    "value": "lavender",
+    "label": "Lavender Town"
+  },
+  {
+    "value": "celadon",
+    "label": "Celadon City"
+  },
+  {
+    "value": "fuchsia",
+    "label": "Fuchsia City"
+  },
+  {
+    "value": "saffron",
+    "label": "Saffron City"
+  },
+  {
+    "value": "cinnabar",
+    "label": "Cinnabar Island"
+  }
+  
+  
+]

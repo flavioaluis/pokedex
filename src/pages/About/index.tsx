@@ -26,7 +26,7 @@ export default function Sobre() {
       </div>
       <div className={styles.images}>
         {images.map((image, index)=> (
-          <div key={index} className={styles.images}>
+          <div key={index} className={styles.images__image}>
             <img src={image} alt="imagem de lutas" />
           </div>
         ))}
