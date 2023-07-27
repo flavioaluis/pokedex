@@ -43,6 +43,7 @@ export default function Pokedex() {
   const [searchedPokemons, setSearchedPokemons] = useState<PokemonData[]>([]);
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 12;
+  
   useEffect(() => {
     getPokemons();
   }, []);

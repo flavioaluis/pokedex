@@ -1,27 +1,25 @@
-import { useLocation } from 'react-router-dom';
 import styles from './Home.module.scss';
 import Theme from 'styles/Theme.module.scss';
 import Kanto from 'assets/Kanto.webp';
-
-
-interface PokemonData {
-  id: number;
-  name: string;
-  front_default: string;
-  stats:number[];
-  height: number;
-  weight: number;
-  types: string[];
-  
-}
+import { useLocation, useNavigate } from 'react-router-dom';
+import { PokemonData } from 'Types/pokeData';
 
 export default function Home() {
   const { state } = useLocation();
-  const { pokemon } = state as { pokemon: PokemonData };
+  const pokemon: PokemonData | null = state ? (state as { pokemon: PokemonData }).pokemon : null;
+  
+  let pokemonsRecomendados: PokemonData[] = [];
+  if (pokemon) {
+    pokemonsRecomendados = [pokemon, ...pokemonsRecomendados];
+  }
+  pokemonsRecomendados = pokemonsRecomendados.sort(() => 0.5 - Math.random()).slice(0, 3);
 
-  const pokemonsRecomendados = Array.isArray(pokemon)
-    ? pokemon.sort(() => 0.5 - Math.random()).splice(0, 3)
-    : [];
+  function redirecionarDetalhes(pokemon: PokemonData) {
+    const navigate = useNavigate();
+    console.log(pokemon);
+    navigate(`/pokemon/${pokemon.id}`,{state: {pokemon}, replace:true});
+
+  }
   return (
     <section >
       <h3 className={Theme.title}>
@@ -33,7 +31,10 @@ export default function Home() {
             <div className={styles.recomendado__imagem}>
               <img src={pokemon.front_default} alt={pokemon.name} />
             </div>
-            <button className={styles.recomendado__botao}>
+            <button 
+              className={styles.recomendado__botao}
+              onClick={() => redirecionarDetalhes(pokemon)}
+            >
                   Ver mais
             </button>
           </div>

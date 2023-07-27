@@ -24,7 +24,7 @@ export default function Pokemon() {
   const capitalizeFirstLetter = (str:string) => {
     return (str.charAt(0).toUpperCase() + str.slice(1));
   };
-  
+  console.log(state);
   const pokeType = () => {
     const types = pokemon.types.map((type) => type.toLowerCase());
   
