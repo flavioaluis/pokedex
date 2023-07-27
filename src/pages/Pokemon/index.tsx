@@ -1,7 +1,7 @@
 import { useLocation, useNavigate, Routes, Route } from 'react-router-dom';
 import classNames from 'classnames';
 import { PokemonData } from 'Types/pokeData';
-import Capitalizar from 'Types/util';
+import Capitalize from 'Types/util';
 import styles from './Pokemon.module.scss';
 import StandardPage from 'components/StandardPage';
 import NotFound from 'pages/NotFound';
@@ -17,17 +17,17 @@ export default function Pokemon() {
     if (types.length === 1) {
       return (
         <div className={classNames(styles[`typesContainer__type__${types[0]}`])}>
-          {Capitalizar(types[0])}
+          {Capitalize(types[0])}
         </div>
       );
     } else if (types.length === 2) {
       return (
         <>
           <div className={classNames(styles[`typesContainer__type__${types[0]}`])}>
-            {Capitalizar(types[0])}
+            {Capitalize(types[0])}
           </div>
           <div className={classNames(styles[`typesContainer__type__${types[1]}`])}>
-            {Capitalizar(types[1])}
+            {Capitalize(types[1])}
           </div>
         </>
       );
@@ -52,7 +52,7 @@ export default function Pokemon() {
               {'< Voltar '}
             </button>
             <section>
-              <h1 className={styles.title}>{Capitalizar(pokemon.name)}</h1>
+              <h1 className={styles.title}>{Capitalize(pokemon.name)}</h1>
               <div className={styles.pokemonInfo}>
                 <div className={styles.imageContainer}><img src={pokemon.image} alt={pokemon.name} /></div>
                 <div className={styles.statsContainer}>
