@@ -35,6 +35,7 @@
     }
   }
 }
+
 .map{
   display: flex;
   justify-content: space-between;
@@ -42,13 +43,11 @@
     flex-direction:column;
     
   }
-  
-
   &__Kanto{
   width: 45%;
   @media (max-width: $mobile) {
-    margin-bottom: 20px;
-    width: 100%;
+    margin-bottom: 10px;
+    width: 140%;
   }
   }
 }

@@ -41,19 +41,9 @@ export default function Home() {
           </div>
         ))} 
       </div> 
-      <div className={styles.bestPokes}>
-        <div className={styles.bestPoke}>
-          <div className={styles.bestPoke__image}>
-              
-          </div>
-          <button className={styles.bestPoke__button}>
-              Ver Mais
-          </button>
-        </div>
-      </div>
       <div>
         <h2 className={Theme.subTitle}> Bem Vindos </h2>
-        <p className={Theme.description}> Aqui seria um site aos pokemons da região Kanto.</p>
+        <p className={Theme.description}> Aqui seria um site aos pokemons da região Kanto. Aqui possui 151 pokemons para se capturar, contém 9 cidades, uma vila, uma ilha que contém uma cidade.  </p>
       </div>
       
       <h3 className={Theme.title}> Região Kanto </h3>
