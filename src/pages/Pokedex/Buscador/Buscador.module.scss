@@ -24,5 +24,8 @@
     &::placeholder {
       color: #4c4d5e;
     }
+    @media (max-width: $desktop_xsm) {
+      font-size: 1rem;
+    }
   }
 }

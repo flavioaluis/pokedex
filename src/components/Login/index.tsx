@@ -2,6 +2,7 @@ import { useAuth } from 'context/AuthProvider/useAuth';
 import { useNavigate } from 'react-router-dom';
 import { Button, Col, Form, Input, Row, message } from 'antd';
 import styles from './Login.module.scss';
+import imgLogin from 'assets/pokemons.png';
 
 const Login = () => {
   const auth = useAuth();
@@ -18,46 +19,48 @@ const Login = () => {
   }
 
   return (
-    <Row className={styles.container}
-      justify='center'
-      style={{
-        height: '100vh',
-      }}
-    >
-      <Col span={12}>
-        <Form
-          name='basic'
-          labelCol={{ span: 5  }}
-          wrapperCol={{ span: 14}}
-          onFinish={onFinish}
-        >
-          <Form.Item 
-            label='Email' 
-            name='email'
+    <>
+      <Row
+        justify='center'
+        align='middle'
+        style={{
+          height: '10vh',
+        }}
+      >
+        <Col span={15} xs={24} sm={15} md={8}>
+          <Form
+            name='basic'
+            labelCol={{ span: 5 }}
+            wrapperCol={{ span: 18 }}
+            onFinish={onFinish}
           >
-            <Input />
-          </Form.Item>
+            <Form.Item label='Email' name='email'>
+              <Input />
+            </Form.Item>
 
-          <Form.Item className={styles.formItem}
-            label='Password' 
-            name='password'
-          >
-            <Input.Password />
-          </Form.Item>
-
-          <Form.Item  className={styles.formButton} wrapperCol={{ offset:8, span:16}}>
-            <Button 
-              type='primary' 
-              htmlType='submit'
-              className={styles.botao}
+            <Form.Item
+              className={styles.formItem}
+              label='Password'
+              name='password'
             >
-              Sign In
-            </Button>
-          </Form.Item>
+              <Input.Password />
+            </Form.Item>
 
-        </Form>
-      </Col>
-    </Row>
+            <Form.Item
+              className={styles.formButton}
+              wrapperCol={{ offset: 8, span: 16 }}
+            >
+              <Button type='primary' htmlType='submit' className={styles.botao}>
+                Sign In
+              </Button>
+            </Form.Item>
+          </Form>
+        </Col>
+      </Row>
+      <div className={styles.imgContainer}>
+        <img src={imgLogin} alt='img pokemons' />
+      </div>
+    </>
   );
 };
 

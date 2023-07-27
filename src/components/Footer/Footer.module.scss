@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
   @media (max-width: $desktop_xsm) {
-  padding: 10px $padding-horizontal-mobile;
+  padding: 40px $padding-horizontal-mobile;
   }
   @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
   padding: 10px $padding-horizontal-sm;
@@ -29,8 +29,11 @@
 
 .Logo{
   width: 200px;
-  height: 100px;
+  height: 90px;
 }
 .textContainer {
   flex: 1;
+  @media (max-width: $desktop_xsm) {
+  text-align: center;;
+  }
 }

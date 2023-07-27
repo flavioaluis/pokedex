@@ -1,11 +1,5 @@
+@import "styles/breakpoints";
 @import "../../styles/variaveis";
-
-.container {
-  background-image: url("/assets/pokemons.png");
-  background-size:cover;
-  background-position: 50% center;
-  background-repeat: no-repeat;
-}
 
 .ant-form-item {
   font-size: 18px;
@@ -14,7 +8,20 @@
   display:flex;
   justify-content: center;
 }
-
 .botao {
   background-color: $red;
+}
+.imgContainer {
+  display: flex;
+  justify-content: center;
+  img{
+    width: 100%;
+  @media (max-width: $desktop_xsm) {
+    margin: 3em 0em;
+    }
+    @media (max-width: $mobile) {
+      margin: 10em 0em 0em 5em; 
+      width:250px;
+      }
+  }
 }
