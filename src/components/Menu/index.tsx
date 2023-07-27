@@ -15,10 +15,10 @@ import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 
 export default function Menu() {
   const navigate = useNavigate();
-
+  
 
   return (
-    <SideNav 
+    <SideNav className={styles.side}
       onSelect={(selected: string) => {
         navigate('/'+ selected);
         // Add your code here

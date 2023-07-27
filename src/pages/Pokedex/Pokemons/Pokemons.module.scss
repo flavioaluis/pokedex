@@ -1,24 +1,6 @@
 @import "styles/variaveis";
 @import "styles/breakpoints";
 
-$grass: #9bcc50;
-$poison: #b97fc9;
-$fire: #fd7d24;
-$water: #025085;
-$flying: #3dc7ef;
-$ice: #51c4e7;
-$bug: #729f3f;
-$normal: #a4acaf;
-$electric: #eed535;
-$ground: #ab9842;
-$fairy: #fdb9e9;
-$fighting: #d52323;
-$dragon: #f16e57;
-$psychic: #f366b9;
-$rock: #a38c21;
-$ghost: #6232b1;
-
-
 .pokemon{
   align-items: center;
   max-width: 200px;
@@ -65,113 +47,18 @@ $ghost: #6232b1;
       margin: 4px;
     }
   }
-  &__type {
-    justify-content: center;
-    display:flex;
-    align-items: center;
-    border-radius: 2px;
-    width: 150px;
-    font-weight: bold;
-    height: 20px;
-    
-    &__grass {
-      background-color: $grass;
-      color: white;
-    }
-    &__poison {
-      background-color: $poison;
-      color: white;
-    }
-    &__fire {
-      background-color: $fire;
-      color: white;
-    }
-    &__water {
-      background-color: $water;
-      color: white;
-    }
-    &__ice {
-      background-color: $ice;
-      color: white;
-    }
-    &__flying {
-      background-color: $flying;
-      color: white;
-    }
-    &__ground {
-      background-color: $ground;
-      color: white;
-    }
-    &__ghost {
-      background-color: $ghost;
-      color: white;
-    }
-    &__fighting {
-      background-color: $fighting;
-      color: white;
-    }
-    &__fairy {
-      background-color: $fairy;
-      color: white;
-    }
-    &__rock {
-      background-color: $rock;
-      color: white;
-    }
-    &__psychic {
-      background-color: $psychic;
-      color: white;
-    }
-    &__dragon{
-      background-color: $dragon;
-      color: white;
-    }
-    &__normal {
-      background-color: $normal;
-      color: white;
-    }
-    &__bug {
-      background-color: $bug;
-      color: white;
-    }
-    &__electric {
-      background-color: $electric;
-      color: white;
-    }
-
-  }
+  
   &__weight,
-  &__height,
-  &__category {
-    
+  &__height {
+    padding-left: 5px;
     margin-left: 10px;
-    display: flex;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: bold;
-    
   }
   &__id {
     color: $red;
+    padding-left: 5px;
     font-size: 1.7rem;
   }
 }
 
-
-a:link {
-  color: $dark;
-}
-
-/* visited link */
-a:visited {
-  color: $grey-null;
-}
-
-/* mouse over link */
-a:hover {
-  color: $blue;
-}
-
-/* selected link */
-a:active {
-  color: rgb(0, 0, 0);
-}

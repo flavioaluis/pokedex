@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -26,15 +26,23 @@ interface PokemonLinkProps {
   children: React.ReactNode;
 }
 
-const PokemonLink: React.FC<PokemonLinkProps> = ({ to, className, children }:PokemonLinkProps) => {
-  return <Link to={to} state={to.state} className={className}>{children}</Link>;
+const PokemonLink: React.FC<PokemonLinkProps> = ({
+  to,
+  className,
+  children,
+}: PokemonLinkProps) => {
+  return (
+    <Link to={to} state={to.state} className={className}>
+      {children}
+    </Link>
+  );
 };
 
 export default function Pokedex() {
   const [pokemons, setPokemons] = useState<PokemonData[]>([]);
   const [searchedPokemons, setSearchedPokemons] = useState<PokemonData[]>([]);
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage = 12; 
+  const itemsPerPage = 12;
   useEffect(() => {
     getPokemons();
   }, []);
@@ -51,7 +59,9 @@ export default function Pokedex() {
           id: result.data.id,
           name: result.data.name,
           front_default: result.data.sprites.front_default,
-          stats: result.data.stats.map((base_stat: Stat) => base_stat.base_stat),
+          stats: result.data.stats.map(
+            (base_stat: Stat) => base_stat.base_stat
+          ),
           height: result.data.height,
           weight: result.data.weight,
           types: result.data.types.map((type: Type) => type.type.name),
@@ -65,7 +75,7 @@ export default function Pokedex() {
 
   const pokemonSearch = (name: string) => {
     if (name === '') {
-      setSearchedPokemons(pokemons); // Reset to the original 
+      setSearchedPokemons(pokemons); // Reset to the original
     } else {
       const filteredPokemons = pokemons.filter((pokemon) =>
         pokemon.name.toLowerCase().includes(name.toLowerCase())
@@ -96,7 +106,9 @@ export default function Pokedex() {
               to={{
                 pathname: `/pokemon/${pokemon.id}`,
                 state: { pokemon },
+    
               }}
+              
               className={styles.link}
             >
               <Pokemons

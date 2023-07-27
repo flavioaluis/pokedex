@@ -2,16 +2,8 @@
 @import "styles/breakpoints";
 
 .menu {
-  
-    @media (max-width: $desktop_xsm) {
-      padding: 20px $padding-horizontal-mobile;
-    }
-    @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
-      padding: 20px $padding-horizontal-sm;
-    }
-    @media (min-width: $desktop_sm) and (max-width: $desktop_md) {
-      padding: 20px $padding-horizontal-md;
-    }
+  position:fixed;
+  top:50px;
   &__item{
     display: flex;
     align-items: center;
@@ -30,7 +22,7 @@
 
 }
   .pokeIcons{
-    fill: #4F4F4F;
+    fill: $grey-null;
     margin: 10px;
     width:25px;
     height:25px;
