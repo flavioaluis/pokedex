@@ -81,15 +81,6 @@ export default function Home() {
     return null;
   };
 
-   
-  const lookDetails = (pokemon: PokedexData) => {
-    navigate(`/pokemon/${pokemon.id}`);
-  };
-
-  const divClick = (pokemon: PokedexData) => {
-    lookDetails(pokemon);
-  };
-
   const lookPokedex = () => {
     navigate('/pokedex');
   };
@@ -100,10 +91,7 @@ export default function Home() {
       <div className={styles.bestPokes}>
         {pokemonsRecomendados.map((pokemon: PokedexData) => (
           <div key={pokemon.id}>
-            <div
-              className={styles.pokeContainer}
-              onClick={() => divClick(pokemon)}
-            >
+            <div className={styles.pokeContainer}>
               <div className={styles.bestPoke__image}><img src={pokemon.image} alt={pokemon.name} /></div>
               <div className={styles.bestPoke__title}><h2>{Capitalize(pokemon.name)}</h2></div>
               <div className={styles.bestPoke__tags}>{pokeType(pokemon)}</div>

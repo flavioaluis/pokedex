@@ -36,3 +36,4 @@ export interface PokemonLinkProps {
   className?: string;
   children: React.ReactNode;
 }
+
