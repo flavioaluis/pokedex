@@ -1,7 +1,9 @@
 import styles from './Menu.module.scss';
 import { useNavigate } from 'react-router-dom';
 import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
-import { FaHome, FaUser } from 'react-icons/fa';
+import { FaHome } from 'react-icons/fa';
+import { ReactComponent as Login} from 'assets/svgs/login.svg';
+import { ReactComponent as Profile} from 'assets/svgs/profile.svg';
 import { ReactComponent as PokeLogo} from 'assets/svgs/pokeLogo.svg';
 import { ReactComponent as PokeDex} from 'assets/svgs/pokedex.svg';
 
@@ -21,10 +23,18 @@ export default function Menu() {
       className={styles.fixed}
     >
       <SideNav.Toggle />
-      <SideNav.Nav defaultSelected="profile">
+      <SideNav.Nav defaultSelected="login">
+        <NavItem  eventKey="login">
+          <NavIcon>
+            <Login className={styles.pokeIcons} />
+          </NavIcon>
+          <NavText style={{fontSize:20}}>
+                Login
+          </NavText>
+        </NavItem>
         <NavItem  eventKey="profile">
           <NavIcon>
-            <FaUser className={styles.pokeIcons} />
+            <Profile className={styles.pokeIcons} />
           </NavIcon>
           <NavText style={{fontSize:20}}>
                 User
