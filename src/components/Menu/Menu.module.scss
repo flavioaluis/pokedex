@@ -1,26 +1,14 @@
 @import "styles/variaveis";
 @import "styles/breakpoints";
 
-.menu {
-  &__item{
-    display: flex;
-    align-items: center;
-  }
-  &__text{
-    color: $dark;
-      cursor: pointer;
-      font-size: 40px;
-      font-weight: 600;
-      transition: .2s ease;
-      &:hover {
-        color: $dark-grey;
-      }
+.fixed{
+  position:fixed;
+  z-index: 100; 
 }
 
+.pokeIcons{
+  fill: $grey-null;
+  margin: 10px;
+  width:25px;
+  height:25px;
 }
-  .pokeIcons{
-    fill: $grey-null;
-    margin: 10px;
-    width:25px;
-    height:25px;
-  }

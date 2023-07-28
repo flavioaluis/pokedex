@@ -2,24 +2,21 @@
 @import "styles/breakpoints";
 
 .footer {
+  
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   background-color: $red;
   display: flex;
   justify-content: center;
-  @media (max-width: $desktop_xsm) {
-  padding: 40px $padding-horizontal-mobile;
-  }
-  @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
-  padding: 10px $padding-horizontal-sm;
-  }
-  @media (min-width: $desktop_sm) and (max-width: $desktop_md) {
-  padding: 10px $padding-horizontal-md;
-  }
+
 }
 .footerContent {
   display: flex;
   align-items: center;
   @media (max-width: $desktop_xsm) {
-    flex-direction: column;
+      flex-direction: column;
+    
   }
 }
 
@@ -28,12 +25,24 @@
 }
 
 .Logo{
-  width: 200px;
-  height: 90px;
+  width: 150px;
+  height: 60px;
+  @media (max-width: $desktop_xsm) {
+    width:100px;
+    height: 40px;
+  }
+  @media (max-width: $mobile) {
+    width: 80px;
+    height: 20px;
+  }
 }
 .textContainer {
   flex: 1;
   @media (max-width: $desktop_xsm) {
-  text-align: center;;
+  text-align: center;
+  font-size: 13px;
+  }
+  @media (max-width: $desktop_xsm) {
+  font-size: 10px;
   }
 }

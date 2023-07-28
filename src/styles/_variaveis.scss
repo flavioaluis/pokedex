@@ -14,6 +14,8 @@ $blue: #282b57;
 $red: #d73b3b;
 $red-dark: #c62a2a;
 $grey-null:#4F4F4F;
+$orange:#fd7d24;
+$yellow:#FFCB05;
 
    //Pokemons Types
 
@@ -36,12 +38,12 @@ $ghost: #6232b1;
 
 
 a:link {
-  color: $dark;
+  color: $yellow;
 }
 
 /* visited link */
 a:visited {
-  color: $grey-null;
+  color: $orange;
 }
 
 /* mouse over link */
@@ -51,7 +53,7 @@ a:hover {
 
 /* selected link */
 a:active {
-  color: rgb(0, 0, 0);
+  color: $dark;
 }
 
 .typesContainer {

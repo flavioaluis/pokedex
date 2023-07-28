@@ -7,7 +7,7 @@ import { PokemonData } from 'Types/pokeData';
 
 export default function Home() {
   const { state } = useLocation();
-  const { pokemon } = state as { pokemon: PokemonData };
+  const pokemon: PokemonData | null = state ? (state as { pokemon: PokemonData }).pokemon : null;
   
   let pokemonsRecomendados: PokemonData[] = [];
   if (pokemon) {

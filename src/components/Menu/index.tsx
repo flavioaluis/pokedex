@@ -13,15 +13,16 @@ export default function Menu() {
   
 
   return (
-    <SideNav className={styles.side}
+    <SideNav 
       onSelect={(selected: string) => {
         navigate('/'+ selected);
         // Add your code here
       }}
+      className={styles.fixed}
     >
       <SideNav.Toggle />
-      <SideNav.Nav className={styles.menu} defaultSelected="profile">
-        <NavItem className={styles.menu__item} eventKey="profile">
+      <SideNav.Nav defaultSelected="profile">
+        <NavItem  eventKey="profile">
           <NavIcon>
             <FaUser className={styles.pokeIcons} />
           </NavIcon>
@@ -29,7 +30,7 @@ export default function Menu() {
                 User
           </NavText>
         </NavItem>
-        <NavItem className={styles.menu__item} eventKey="">
+        <NavItem eventKey="">
           <NavIcon>
             <FaHome className={styles.pokeIcons} />
           </NavIcon>
@@ -37,7 +38,7 @@ export default function Menu() {
                 Home
           </NavText>
         </NavItem>
-        <NavItem className={styles.menu__item} eventKey="about">
+        <NavItem eventKey="about">
           <NavIcon>
             <PokeLogo className={styles.pokeIcons}/>
           </NavIcon>
@@ -45,7 +46,7 @@ export default function Menu() {
                 About
           </NavText>
         </NavItem>
-        <NavItem className={styles.menu__item} eventKey="pokedex">
+        <NavItem eventKey="pokedex">
           <NavIcon>
             <PokeDex className={styles.pokeIcons}/>
           </NavIcon>

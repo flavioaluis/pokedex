@@ -1,4 +1,6 @@
 import { useAuth } from 'context/useAuth';
+import styles from './ProtectedLayout.module.scss';
+import { ReactComponent as Lock } from 'assets/svgs/locked.svg';
 
 
 export const ProtectedLayout = ({children}: {children: JSX.Element}) => {
@@ -6,8 +8,13 @@ export const ProtectedLayout = ({children}: {children: JSX.Element}) => {
   const auth = useAuth();
  
   if(!auth.email) {
-    // eslint-disable-next-line react/no-unescaped-entities
-    return <h1>You don't have access</h1>;
-  }
+    return (
+      <div className={styles.Acess}>
+        <Lock className={styles.locked}/>
+        <h1 >You dont have access</h1>
+      </div> 
+    );
+  
+  }    
   return children;
 };
