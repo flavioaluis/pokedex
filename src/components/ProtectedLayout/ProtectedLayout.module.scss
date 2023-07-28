@@ -1,9 +1,27 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/variaveis';
+
 .Acess {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+@media (max-width: $mobile) {
+  .text {
+    font-size: 15px;
+  }
+}
+.locked {
+  width: 80px;
+  padding-right: 10px;
+  
 }
 
-.locked {
-  width: 70px;
-  padding-right: 10px;
-}
+.imgContainer {
+  display: flex;
+  justify-content: center; 
+  margin:20px;
+  img {
+    width: 200px;
+  }
+  }

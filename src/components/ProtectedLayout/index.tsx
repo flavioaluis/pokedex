@@ -1,20 +1,23 @@
 import { useAuth } from 'context/useAuth';
 import styles from './ProtectedLayout.module.scss';
 import { ReactComponent as Lock } from 'assets/svgs/locked.svg';
+import imgPsy from 'assets/psyduck.png';
 
-
-export const ProtectedLayout = ({children}: {children: JSX.Element}) => {
-
+export const ProtectedLayout = ({ children }: { children: JSX.Element }) => {
   const auth = useAuth();
- 
-  if(!auth.email) {
+
+  if (!auth.email) {
     return (
-      <div className={styles.Acess}>
-        <Lock className={styles.locked}/>
-        <h1 >You dont have access</h1>
-      </div> 
+      <section>
+        <div className={styles.Acess}>
+          <Lock className={styles.locked} />
+          <h1 className={styles.text}>You dont have access</h1>
+        </div>
+        <div className={styles.imgContainer}>
+          <img src={imgPsy} alt='img pokemons' />
+        </div>
+      </section>
     );
-  
-  }    
+  }
   return children;
 };
