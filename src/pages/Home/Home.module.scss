@@ -2,38 +2,102 @@
 @import 'styles/variaveis';
 
 .bestPokes {
-  border-radius: 2px;
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 20px;
   justify-content: space-between;
 }
+
+.pokeContainer{
+  min-width: 220px;
+  margin-bottom: 10px;
+  border: inset #856202;
+  border-radius: 0.8em;
+  cursor:pointer;
+  transition: .2s ease-in;
+  &:hover {
+    background-color: $grey;
+  }
+}
 .bestPoke {
-  margin-bottom: 30px;;
+  margin-bottom: 30px;
   padding-left: 7em;
   &__image {
-    width: 300px;
+    max-width: 220px;
     margin-bottom: 10px;
     img {
       border-radius: 8px;
       width: 100%;
+      @media (max-width: $desktop_xsm) {
+      width: 100%;
+    }
     }
   }
-  &__button {
-    background-color: $red;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    font-size: 1.2rem;
+  &__title {
+    h2 {
+        text-align: center;
+        margin:0;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+  }
+  &__tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 700px;
+    > div {
+      margin: 4px;
+    }
+  }
+  
+  &__weight,
+  &__height {
+    padding-left: 0.3em;
+    font-size: 1.4rem;
     font-weight: bold;
-    padding: 10px 0;
-    transition: .2s ease;
-    width: 100%;
-    &:hover {
-      background-color: $red-dark;
-    }
+    
   }
+  &__id {
+    color: $red;
+    padding-left: 0.5em;
+    font-size: 1.7rem;
+  }
+}
+
+.title {
+  margin-bottom: 30px;
+  color: $dark;
+  font-size: 3rem;
+  
+}
+
+.subTitle {
+    margin-bottom: 30px;
+    color: $dark;
+    font-size: 2.2em;
+  }
+
+  .description{
+    margin-bottom: 30px;
+    font-size: 1.8em;
+  }
+
+@media (max-width: $desktop_xsm) {
+ 
+  .subTitle{
+    text-align: center;
+    font-size: 1.7rem;
+  }
+  .description{
+    
+    margin-bottom: 30px;
+    font-size: 1.3rem;
+    
+  }
+
+ 
 }
 
 .map{
@@ -41,16 +105,39 @@
   justify-content: space-between;
   @media (max-width: $mobile) {
     flex-direction:column;
+    justify-content: start;
     
   }
   &__Kanto{
   width: 45%;
   @media (max-width: $mobile) {
     margin-bottom: 10px;
-    width: 140%;
+    width: 100%;
   }
   }
 }
 
-
-
+.buttonContainer{
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  &__button {
+      background-color: $red;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 10px 0;
+      transition: .2s ease;
+      width: 30%;
+      &:hover {
+        background-color: $red-dark;
+      }
+      @media (max-width: $mobile) {
+        width: 70%;
+        margin-bottom: 10px;
+    }
+  }
+}

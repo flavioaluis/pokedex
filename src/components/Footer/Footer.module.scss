@@ -2,8 +2,9 @@
 @import "styles/breakpoints";
 
 .footer {
-  
+  z-index: 999;
   position: fixed;
+  left:0;
   bottom: 0;
   width: 100%;
   background-color: $red;
@@ -12,6 +13,7 @@
 
 }
 .footerContent {
+  
   display: flex;
   align-items: center;
   @media (max-width: $desktop_xsm) {
@@ -43,6 +45,6 @@
   font-size: 13px;
   }
   @media (max-width: $desktop_xsm) {
-  font-size: 10px;
+  font-size: 8px;
   }
 }

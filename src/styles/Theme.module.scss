@@ -3,25 +3,20 @@
 
 .container {
   padding: 50px $padding-horizontal;
+
+  @media (max-width: $mobile) {
+  padding: 75px 30px 50px 80px !important;
+  }
   @media (max-width: $desktop_xsm) {
     padding: 50px $padding-horizontal-mobile;
+  
     .title{
       margin-top: 0;
       text-align: center;
-      font-size: 2rem;
+      font-size: 1.5rem;
+      margin-right: 30px;
 
     }
-    .subTitle{
-      text-align: center;
-      font-size: 1.7rem;
-    }
-    .description{
-      margin-bottom: 30px;
-      font-size: 1.4rem;
-      text-align: center;
-    }
-  
-   
   }
   @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
     padding: 50px $padding-horizontal-sm;
@@ -36,15 +31,4 @@
   font-size: 3rem;
   
 }
-
-.subTitle {
-    margin-bottom: 30px;
-    color: $dark;
-    font-size: 2.2em;
-  }
-
-  .description{
-    margin-bottom: 30px;
-    font-size: 1.8em;
-  }
 

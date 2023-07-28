@@ -13,7 +13,7 @@ export default function Menu() {
   
 
   return (
-    <SideNav 
+    <SideNav style={{width:10}}
       onSelect={(selected: string) => {
         navigate('/'+ selected);
         // Add your code here

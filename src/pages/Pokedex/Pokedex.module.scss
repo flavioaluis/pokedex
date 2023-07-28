@@ -20,12 +20,17 @@
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  @media (max-width: $mobile) {
+    justify-content: start;
+  margin-top: 5px;
+  }
 }
 
 .paginationContainer {
   display: flex;
   list-style: none;
   padding: 0;
+
 }
 
 .paginationItem {
@@ -35,6 +40,10 @@
   font-size: 14px;
   border: 1px solid #ccc;
   padding: 5px 10px;
+  @media (max-width: $mobile) {
+    padding: 2px 5px;
+    }
+  
 }
 
 .paginationActive {
