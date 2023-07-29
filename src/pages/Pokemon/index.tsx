@@ -104,7 +104,7 @@ export default function Pokemon() {
                             })}
                             style={{ width: `${pokemon.stats[2]}%` }}
                           >
-                            {pokemon.stats[1]}
+                            {pokemon.stats[2]}
                           </div>
                         </div>
                       </div>
@@ -118,7 +118,7 @@ export default function Pokemon() {
                             })}
                             style={{ width: `${pokemon.stats[3]}%` }}
                           >
-                            {pokemon.stats[1]}
+                            {pokemon.stats[3]}
                           </div>
                         </div>
                       </div>
@@ -132,7 +132,7 @@ export default function Pokemon() {
                             })}
                             style={{ width: `${pokemon.stats[4]}%` }}
                           >
-                            {pokemon.stats[1]}
+                            {pokemon.stats[4]}
                           </div>
                         </div>
                       </div>
@@ -146,7 +146,7 @@ export default function Pokemon() {
                             })}
                             style={{ width: `${pokemon.stats[5]}%` }}
                           >
-                            {pokemon.stats[1]}
+                            {pokemon.stats[5]}
                           </div>
                         </div>
                       </div>
